@@ -4,3 +4,9 @@ source : https://www.youtube.com/watch?v=nu2m9HaeVV4&t=301s
 Ce projet a pour but de créer un forum complet en PHP et MySQL
 Ce forum permettra les actions suivantes : 
 - inscription/connexion
+- publier une question
+- modifier une question
+- supprimer une question
+- rechercher et afficher les questions
+- répondre à une question
+- afficher le profil d'un utilisateur et ses publications
