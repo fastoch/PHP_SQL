@@ -10,7 +10,8 @@ VS Code génère automatiquement le template html.-->
     dans le fichier head.php enregistré dans le dossier includes-->
 
     <!--à présent, passons au formulaire, là aussi on utilise bootstrap-->
-    <form>
+    <br><br>
+    <form class="container"><!--cette classe bootstrap permet d'élargir les bordures du formulaire-->
         <div class="mb-3">
             <label for="exampleInputPseudo" class="form-label">Pseudo</label>
             <input type="text" class="form-control">
