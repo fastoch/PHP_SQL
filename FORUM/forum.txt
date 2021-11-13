@@ -19,3 +19,5 @@ Le dossier "includes" contient des fichiers qu'il suffira d'inclure dans chaque 
 Cela évite d'avoir à copier-coller le code à chaque fois.
 De plus, lorsqu'on modifie le code en question, cela répercute la modif dans tous les fichiers incluant ce code.
 
+NOtes : 
+Pour générer un template html depuis un fichier .php, taper ! puis Entrée. VS Code génère alors automatiquement un template html.
