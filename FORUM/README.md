@@ -22,3 +22,5 @@ De plus, lorsqu'on modifie le code en question, cela répercute la modif dans to
 
 Notes : 
 Pour générer un template html depuis un fichier .php, taper ! puis Entrée. VS Code génère alors automatiquement un template html.
+
+timeline : 17:00/5:24:00
