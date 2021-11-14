@@ -1,39 +1,40 @@
 <!--Pour générer un template html depuis un fichier .php, taper ! puis Entrée. 
-VS Code génère automatiquement le template html.-->
+VS Code génèrera automatiquement le template html.-->
 <!DOCTYPE html>
 <html lang="en">
-<!--inclusion du fichier head.php contenu dans includes-->
+<!--inclusion du fichier head.php contenu dans le dossier includes-->
 <?php include 'includes\head.php'; ?>
 <body>
-    <!--pour ne pas perdre du temps avec le code CSS, on utilise 
-    le framework bootstrap, voir CSS only et JavaScript Bundle
-    dans le fichier head.php enregistré dans le dossier includes-->
+    <!--pour ne pas perdre du temps avec le code CSS et JS, on utilise le framework bootstrap. 
+    Voir CSS only et JavaScript Bundle dans le fichier head.php du dossier includes-->
 
-    <!--à présent, passons au formulaire, là aussi on utilise bootstrap-->
+    <!--à présent, passons au formulaire, là aussi on utilise un formulaire bootstrap-->
     <br><br>
-    <form class="container"><!--cette classe bootstrap permet d'élargir les bordures du formulaire-->
+    <!--container est une classe bootstrap qui permet d'élargir les bordures du formulaire-->
+    <!--POST est une méthode HTTP qui permet d'envoyer les données du formulaire vers le code PHP-->
+    <form class="container" method="POST">
         <div class="mb-3">
             <label for="exampleInputPseudo" class="form-label">Pseudo</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="pseudo"><!--on définit l'attribut name pour pouvoir accéder à chq donnée du formulaire-->
         </div>
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">Nom</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="lastName">
         </div>
         <div class="mb-3">
             <label for="exampleInputFirstName" class="form-label">Prénom</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="firstName">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" >
+            <input type="email" class="form-control" name="email">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" >
+            <input type="password" class="form-control" name="password">
         </div>
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
     </form>
 
 </body>

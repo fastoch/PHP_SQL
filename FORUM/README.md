@@ -23,4 +23,8 @@ De plus, lorsqu'on modifie le code en question, cela répercute la modif dans to
 Notes : 
 Pour générer un template html depuis un fichier .php, taper ! puis Entrée. VS Code génère alors automatiquement un template html.
 
-timeline : 17:00/5:24:00
+timeline : 19:00/5:24:00
+
+Pour gérer un système d'inscription, il nous faut une base de données
+On ouvre notre navigateur favori, on tape localhost/phpmyadmin et on se logue avec root (aucun mot de passe lors de la première connexion)
+On peut alors créer notre database
