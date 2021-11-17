@@ -1,14 +1,20 @@
+<!--Ce fichier est celui qui sera utilisé côté utilisateur (front-end)--> 
+
 <!--Pour générer un template html depuis un fichier .php, taper ! puis Entrée. 
 VS Code génèrera automatiquement le template html.-->
 <!DOCTYPE html>
 <html lang="en">
-<!--inclusion du fichier head.php contenu dans le dossier includes-->
-<?php include 'includes\head.php'; ?>
+
+    <!--inclusion du fichier head.php contenu dans le dossier includes-->
+    <?php 
+        include 'includes\head.php'; 
+    ?> <!--Ceci équivaut à copier-coller ici le code du fichier head.php-->
+
 <body>
     <!--pour ne pas perdre du temps avec le code CSS et JS, on utilise le framework bootstrap. 
     Voir CSS only et JavaScript Bundle dans le fichier head.php du dossier includes-->
 
-    <!--à présent, passons au formulaire, là aussi on utilise un formulaire bootstrap-->
+    <!--à présent, passons au formulaire d'inscription, là aussi on utilise un formulaire bootstrap-->
     <br><br>
     <!--container est une classe bootstrap qui permet d'élargir les bordures du formulaire-->
     <!--POST est une méthode HTTP qui permet d'envoyer les données du formulaire vers le code PHP-->
@@ -38,4 +44,5 @@ VS Code génèrera automatiquement le template html.-->
     </form>
 
 </body>
+
 </html>
