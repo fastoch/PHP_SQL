@@ -15,7 +15,12 @@ Controller = interface entre la manipulation des données (model) et leur aficha
         // plus d'infos ici : https://www.w3schools.com/PHP/php_includes.asp 
     
     if(isset($_POST['validate'])){ // si la variable validate existe (si un user a cliqué sur le bouton "S'inscrire")
-         
+        // on vérifie que les champs ont bien été renseignés
+        if(!empty($_POST['pseudo']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['password']) && !empty($_POST['email'])) {
+            
+        }else{ // si l'utilisateur n'a pas rempli tous les champs
+            $errorMsg = "Veuillez compléter tous les champs."; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
+        }
     }
 ?>
 

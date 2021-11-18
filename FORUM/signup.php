@@ -11,14 +11,22 @@ VS Code génèrera automatiquement le template html.-->
     ?> <!--Ceci équivaut à copier-coller ici le code du fichier head.php-->
 
 <body>
-    <!--pour ne pas perdre du temps avec le code CSS et JS, on utilise le framework bootstrap. 
+    <!--pour ne pas perdre du temps avec le code CSS et JS, on utilise le framework bootstrap.
     Voir CSS only et JavaScript Bundle dans le fichier head.php du dossier includes-->
 
-    <!--à présent, passons au formulaire d'inscription, là aussi on utilise un formulaire bootstrap-->
+    <!--à présent, passons au formulaire d'inscription, là aussi on utilise un formulaire bootstrap (de <form> à </form>)-->
     <br><br>
     <!--container est une classe bootstrap qui permet d'élargir les bordures du formulaire-->
     <!--POST est une méthode HTTP qui permet d'envoyer les données du formulaire vers le code PHP-->
     <form class="container" method="POST">
+        <!--le code php suivant permet d'afficher un msg d'erreur lorsque
+        l'utilisateur n'a pas rempli tous les champs du formulaire d'inscription-->
+        <?php
+            if(isset($errorMsg)){
+                echo '<p>'.$errorMsg.'</p>'; // affiche le message d'erreur dans un paragraphe HTML
+            }
+        ?>
+
         <div class="mb-3">
             <label for="exampleInputPseudo" class="form-label">Pseudo</label>
             <input type="text" class="form-control" name="pseudo"><!--on définit l'attribut name pour pouvoir accéder à chq donnée du formulaire-->
