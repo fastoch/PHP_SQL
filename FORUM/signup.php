@@ -1,14 +1,18 @@
 <!--Ce fichier est celui qui sera utilisé côté utilisateur (front-end)--> 
 
+<!--inclusion du fichier signupAction.php, servant à gérer l'incription d'un utilisateur-->
+<?php
+    require('actions\signupAction.php');
+?>
+
 <!--Pour générer un template html depuis un fichier .php, taper ! puis Entrée. 
 VS Code génèrera automatiquement le template html.-->
 <!DOCTYPE html>
 <html lang="en">
 
-    <!--inclusion des fichiers .php utiles-->
+    <!--inclusion du fichier head.php-->
     <?php 
         include 'includes\head.php'; 
-        include 'signupAction.php';
     ?> <!--Ceci équivaut à copier-coller ici le code du fichier head.php-->
 
 <body>
@@ -20,11 +24,10 @@ VS Code génèrera automatiquement le template html.-->
     <!--container est une classe bootstrap qui permet d'élargir les bordures du formulaire-->
     <!--POST est une méthode HTTP qui permet d'envoyer les données du formulaire vers le code PHP-->
     <form class="container" method="POST">
-        <!--le code php suivant permet d'afficher un msg d'erreur lorsque
-        l'utilisateur n'a pas rempli tous les champs du formulaire d'inscription-->
+        <!--le code php suivant permet d'afficher un msg d'erreur lorsque l'utilisateur n'a pas rempli tous les champs du formulaire d'inscription-->
         <?php
             if(isset($errorMsg)){
-                echo '<p>'.$errorMsg.'</p>'; // affiche le message d'erreur dans un paragraphe HTML
+                echo '<p style="color:red;">'.$errorMsg.'</p>'; // affiche le message d'erreur en rouge dans un paragraphe HTML
             }
         ?>
 

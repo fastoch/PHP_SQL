@@ -1,8 +1,10 @@
+<!-- 
 MVC : model view controller
 Un concept important en développement
 Model = tout ce qui se charge de créer|récupérer|modifier|supprimer (CRUD) des données, en effectuant des requêtes vers la BDD.
 View = tout ce qui peut être visualisé par l'utilisateur
 Controller = interface entre la manipulation des données (model) et leur afichage (view).
+-->
 
 <!--Ce fichier sera inclus dans le fichier signup.php-->
 <!--Le but étant de séparer au maximum le code PHP du code HTML et de réduire par la même occasion la taille de chaque fichier-->
@@ -19,7 +21,7 @@ Controller = interface entre la manipulation des données (model) et leur aficha
         if(!empty($_POST['pseudo']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['password']) && !empty($_POST['email'])) {
             
         }else{ // si l'utilisateur n'a pas rempli tous les champs
-            $errorMsg = "Veuillez compléter tous les champs."; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
+            $errorMsg = "Veuillez compléter tous les champs"; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
         }
     }
 ?>
