@@ -5,9 +5,10 @@ VS Code génèrera automatiquement le template html.-->
 <!DOCTYPE html>
 <html lang="en">
 
-    <!--inclusion du fichier head.php contenu dans le dossier includes-->
+    <!--inclusion des fichiers .php utiles-->
     <?php 
         include 'includes\head.php'; 
+        include 'signupAction.php';
     ?> <!--Ceci équivaut à copier-coller ici le code du fichier head.php-->
 
 <body>
