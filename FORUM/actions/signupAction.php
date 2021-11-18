@@ -20,8 +20,10 @@ Controller = interface entre la manipulation des données (model) et leur aficha
         // on vérifie que les champs ont bien été renseignés
         if(!empty($_POST['pseudo']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['password']) && !empty($_POST['email'])) {
             
+            $user_pseudo = ""; // je récupère le pseudo renseigné par l'utilisateur
+
         }else{ // si l'utilisateur n'a pas rempli tous les champs
-            $errorMsg = "Veuillez compléter tous les champs"; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
+            $errorMsg = "Veuillez compléter tous les champs..."; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
         }
     }
 ?>
