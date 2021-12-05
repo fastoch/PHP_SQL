@@ -24,7 +24,18 @@ Controller = interface entre la manipulation des données (model) et leur aficha
             $user_pseudo = htmlspecialchars($_POST['pseudo']); // je récupère le pseudo renseigné par l'utilisateur
             $user_firstName = htmlspecialchars($_POST['firstName']); // récupère le prénom de l'utilisateur
             $user_lastName = htmlspecialchars($_POST['lastName']); // récupère le nom de famille
-            $user_pwd = password_hash($_POST['password']); //récupère et crypte le mot de passe avant insertion dans la BDD
+            $user_pwd = password_hash($_POST['password'], PASSWORD_DEFAULT); //récupère et crypte le mot de passe avant insertion dans la BDD
+
+            // on vérifie que l'utilisateur n'est pas déjà inscrit sur notre site
+            $checkUserExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
+            $checkUserExists->execute(array($user_pseudo));
+
+            // on ajoute l'utilisateur, sauf s'il existe déjà
+            if($checkUserExists->rowCount() == 0){
+
+            }else{
+                $errorMsg = "L'utilisateur existe déjà";
+            }
 
         }else{ // si l'utilisateur n'a pas rempli tous les champs
             $errorMsg = "Veuillez compléter tous les champs..."; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
