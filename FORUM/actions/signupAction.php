@@ -19,8 +19,12 @@ Controller = interface entre la manipulation des données (model) et leur aficha
     if(isset($_POST['validate'])){ // si la variable validate existe (si un user a cliqué sur le bouton "S'inscrire")
         // on vérifie que les champs ont bien été renseignés
         if(!empty($_POST['pseudo']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['password']) && !empty($_POST['email'])) {
-            
-            $user_pseudo = ""; // je récupère le pseudo renseigné par l'utilisateur
+            // htmlspecialchars permet de bloquer l'injection de code malicieux 
+            // https://christianelagace.com/php/htmlspecialchars-ou-htmlentities-pour-se-proteger-contre-certaines-attaques-xss/
+            $user_pseudo = htmlspecialchars($_POST['pseudo']); // je récupère le pseudo renseigné par l'utilisateur
+            $user_firstName = htmlspecialchars($_POST['firstName']); // récupère le prénom de l'utilisateur
+            $user_lastName = htmlspecialchars($_POST['lastName']); // récupère le nom de famille
+            $user_pwd = password_hash($_POST['password']); //récupère et crypte le mot de passe avant insertion dans la BDD
 
         }else{ // si l'utilisateur n'a pas rempli tous les champs
             $errorMsg = "Veuillez compléter tous les champs..."; // L'affichage du msg d'erreur sera géré par du code php dans le fichier signup.php
