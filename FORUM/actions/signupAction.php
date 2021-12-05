@@ -25,14 +25,16 @@ Controller = interface entre la manipulation des données (model) et leur aficha
             $user_firstName = htmlspecialchars($_POST['firstName']); // récupère le prénom de l'utilisateur
             $user_lastName = htmlspecialchars($_POST['lastName']); // récupère le nom de famille
             $user_pwd = password_hash($_POST['password'], PASSWORD_DEFAULT); //récupère et crypte le mot de passe avant insertion dans la BDD
+            $user_email = htmlspecialchars($_POST['email']); 
 
-            // on vérifie que l'utilisateur n'est pas déjà inscrit sur notre site
+            // on vérifie que l'utilisateur n'est pas déjà présent dans la BDD
             $checkUserExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
             $checkUserExists->execute(array($user_pseudo));
 
             // on ajoute l'utilisateur, sauf s'il existe déjà
             if($checkUserExists->rowCount() == 0){
-
+                $insertUserOnWebsite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, email, password) VALUES (?, ?, ?, ?, ?)');
+                $insertUserOnWebsite->execute(array($user_pseudo, $user_lastName, $user_firstName, $user_email, $user_pwd));
             }else{
                 $errorMsg = "L'utilisateur existe déjà";
             }
