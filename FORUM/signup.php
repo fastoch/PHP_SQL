@@ -1,6 +1,7 @@
 <!--Ce fichier est celui qui sera utilisé côté utilisateur (front-end)--> 
 
 <!--inclusion du fichier signupAction.php, servant à gérer l'incription d'un utilisateur-->
+<!--pour en savoir plus sur les différentes façons d'inclure un fichier externe : https://paulund.developpez.com/tutoriels/php/differences-include-require/-->
 <?php
     require('actions\signupAction.php');
 ?>
