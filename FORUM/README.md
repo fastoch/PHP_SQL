@@ -30,4 +30,4 @@ Une fois la base de données "forum" créée, on crée une première table nomm�
 
 Pour lier cette DB à notre projet, on créé un fichier database.php dans notre dossier "actions"
 
-timeline : 46:00/5:24:00
+timeline : 49:00/5:24:00
